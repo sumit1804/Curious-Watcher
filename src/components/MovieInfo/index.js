@@ -36,6 +36,12 @@ const MovieInfo = ({ movie }) => (
               <p key={director.credit_id}>{director.name}</p>
             ))}
           </div>
+          <div className="director">
+            <h3>ACTOR{movie.actors.length > 1 ? "S" : ""}</h3>
+            {movie.actors.map((actor) => (
+              <p key={actor.credit_id}>{actor.name} ({actor.character})</p>
+            ))}
+          </div>
         </div>
       </Text>
     </Content>

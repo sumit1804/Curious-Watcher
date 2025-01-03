@@ -4,13 +4,13 @@ import { useParams } from "react-router-dom";
 import { IMAGE_BASE_URL } from "../config";
 // Components
 import BreadCrumb from "./BreadCrumb";
-import Grid from "./Grid";
+// import Grid from "./Grid";
 import Spinner from "./Spinner";
 import MovieInfo from "./MovieInfo";
 // Hook
 import { useMovieFetch } from "../hooks/useMovieFetch";
 //  Image
-import NoImage from "../images/no_image.jpg";
+// import NoImage from "../images/no_image.jpg";
 
 const Movie = () => {
   const { movieId } = useParams();
@@ -18,7 +18,7 @@ const Movie = () => {
   const { state: movie, loading, error } = useMovieFetch(movieId);
 
   if (loading) return <Spinner />;
-  if (error) return <div>Something went wrong...</div>;
+  if (error) return <div><img src={IMAGE_BASE_URL} alt="Something went wrong...." /></div>;
 
   return (
     <>
